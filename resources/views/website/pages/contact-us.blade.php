@@ -19,7 +19,7 @@
         </p>
 
         <div class="mt-10 flex flex-wrap justify-center gap-4 animate-fadeIn">
-            <a href="mailto:info@yourcompany.com"
+            <a href="mailto:manwarkhan.et47@gmail.com"
                 class="group inline-flex items-center gap-2 px-8 py-4 bg-yellow-500 text-black font-semibold rounded-full
                        hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-yellow-500/40 transition-all duration-300">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -27,7 +27,7 @@
                 </svg>
                 Email Us
             </a>
-            <a href="tel:+923001234567"
+            <a href="tel:+971558983847"
                 class="group inline-flex items-center gap-2 px-8 py-4 border-2 border-white/40 text-white font-semibold rounded-full
                        hover:border-yellow-500 hover:text-yellow-400 hover:scale-105
                        active:scale-95 transition-all duration-300 backdrop-blur-sm">
@@ -58,7 +58,7 @@
                     </svg>
                 </div>
                 <h3 class="text-white font-bold text-sm uppercase tracking-widest mb-2">Location</h3>
-                <p class="text-gray-400 text-sm">Karachi, Pakistan</p>
+                <p class="text-gray-400 text-sm">Musaffah, Abu Dhabi, UAE</p>
             </div>
 
             {{-- Phone --}}
@@ -71,7 +71,7 @@
                     </svg>
                 </div>
                 <h3 class="text-white font-bold text-sm uppercase tracking-widest mb-2">Phone</h3>
-                <p class="text-gray-400 text-sm">+92 12345678</p>
+                <p class="text-gray-400 text-sm">+971 55 898 3847</p>
             </div>
 
             {{-- Email --}}
@@ -84,7 +84,7 @@
                     </svg>
                 </div>
                 <h3 class="text-white font-bold text-sm uppercase tracking-widest mb-2">Email</h3>
-                <p class="text-gray-400 text-sm">info@yourcar.com</p>
+                <p class="text-gray-400 text-sm">manwarkhan.et47@gmail.com</p>
             </div>
 
         </div>
@@ -166,7 +166,7 @@
                     </label>
                     <input type="text" name="phone" id="phone" required
                         value="{{ old('phone') }}"
-                        placeholder="+92 xxx xxxxxxx"
+                        placeholder="+971 xx xxx xxxx"
                         class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder-gray-600 text-sm
                                focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500/20 transition-all
                                @error('phone') border-red-500 @enderror">

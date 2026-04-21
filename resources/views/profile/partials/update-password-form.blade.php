@@ -44,7 +44,10 @@
 
         <div class="flex items-center gap-4">
             <button type="submit"
-                class="px-6 py-3 bg-gradient-to-r from-[#c9982b] to-[#a67d23] text-white font-semibold rounded-lg hover:from-[#a67d23] hover:to-[#8a6a1e] transition-all duration-200 shadow-md">
+                class="px-6 py-3 text-white font-semibold rounded-lg transition-all duration-200 shadow-md"
+                style="background: linear-gradient(to right, #c9982b, #a67d23);"
+                onmouseover="this.style.background='linear-gradient(to right, #a67d23, #8a6a1e)'"
+                onmouseout="this.style.background='linear-gradient(to right, #c9982b, #a67d23)'">
                 {{ __('Save') }}
             </button>
 

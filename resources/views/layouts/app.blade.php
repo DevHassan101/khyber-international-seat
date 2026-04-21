@@ -28,7 +28,7 @@
 
 </head>
 
-<body>
+<body class="overflow-hidden h-screen">
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-slate-200 font-roboto">
         @include('layouts.navigation')
 

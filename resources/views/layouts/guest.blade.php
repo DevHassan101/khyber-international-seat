@@ -81,7 +81,7 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .auth-logo-icon {
@@ -188,7 +188,7 @@
 
             {{-- ── Logo ── --}}
             <a href="{{url('/')}}" class="auth-logo-row">
-                <img src="{{ asset('assets/image/royalseat_logo.png') }}" alt="" class="w-34 mx-auto">               
+                <img src="{{ asset('assets/image/logo-kipt.png') }}" alt="" style="width: 42%; margin: auto;">               
             </a>
 
             {{-- ── Page Slot ── --}}

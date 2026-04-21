@@ -105,7 +105,9 @@
                                     <h3 class="text-lg font-semibold text-white">Revenue vs Expenses</h3>
                                 </div>
                                 <div class="p-6">
-                                    <canvas id="revenueExpenseChart" height="280"></canvas>
+                                    <div style="position: relative; height: 280px;">
+                                        <canvas id="revenueExpenseChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
 
@@ -114,8 +116,10 @@
                                 <div class="bg-gradient-to-r from-[#c9982b] to-[#a67d23] px-6 py-4">
                                     <h3 class="text-lg font-semibold text-white">Expenses by Category</h3>
                                 </div>
-                                <div class="p-6 flex items-center justify-center">
-                                    <canvas id="expenseCategoryChart" height="280"></canvas>
+                                <div class="p-6">
+                                    <div style="position: relative; height: 280px;">
+                                        <canvas id="expenseCategoryChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -126,8 +130,10 @@
                                 <div class="bg-gradient-to-r from-[#c9982b] to-[#a67d23] px-6 py-4">
                                     <h3 class="text-lg font-semibold text-white">Bookings by Trip Type</h3>
                                 </div>
-                                <div class="p-6 flex items-center justify-center">
-                                    <canvas id="tripTypeChart" height="280"></canvas>
+                                <div class="p-6">
+                                    <div style="position: relative; height: 280px;">
+                                        <canvas id="tripTypeChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
 
@@ -136,8 +142,10 @@
                                 <div class="bg-gradient-to-r from-[#c9982b] to-[#a67d23] px-6 py-4">
                                     <h3 class="text-lg font-semibold text-white">Payment Mode Distribution</h3>
                                 </div>
-                                <div class="p-6 flex items-center justify-center">
-                                    <canvas id="paymentModeChart" height="280"></canvas>
+                                <div class="p-6">
+                                    <div style="position: relative; height: 280px;">
+                                        <canvas id="paymentModeChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -243,66 +251,70 @@
                             });
 
                             // Expense by Category Doughnut
+                            const expCatLabels = @json($expenseCategories->keys());
+                            const expCatData = @json($expenseCategories->values());
                             new Chart(document.getElementById('expenseCategoryChart'), {
                                 type: 'doughnut',
                                 data: {
-                                    labels: @json($expenseCategories->keys()),
+                                    labels: expCatLabels.length ? expCatLabels : ['No Data'],
                                     datasets: [{
-                                        data: @json($expenseCategories->values()),
-                                        backgroundColor: ['#c9982b', '#ef4444', '#3b82f6', '#8b5cf6', '#f59e0b', '#10b981',
-                                            '#6366f1'
-                                        ]
+                                        data: expCatData.length ? expCatData : [1],
+                                        backgroundColor: expCatData.length
+                                            ? ['#c9982b', '#ef4444', '#3b82f6', '#8b5cf6', '#f59e0b', '#10b981', '#6366f1']
+                                            : ['#e5e7eb']
                                     }]
                                 },
                                 options: {
                                     responsive: true,
                                     maintainAspectRatio: false,
                                     plugins: {
-                                        legend: {
-                                            position: 'bottom'
-                                        }
+                                        legend: { position: 'bottom' }
                                     }
                                 }
                             });
 
                             // Trip Type Doughnut
+                            const tripTypeLabels = @json($tripTypes->keys());
+                            const tripTypeData = @json($tripTypes->values());
                             new Chart(document.getElementById('tripTypeChart'), {
                                 type: 'doughnut',
                                 data: {
-                                    labels: @json($tripTypes->keys()),
+                                    labels: tripTypeLabels.length ? tripTypeLabels : ['No Data'],
                                     datasets: [{
-                                        data: @json($tripTypes->values()),
-                                        backgroundColor: ['#c9982b', '#3b82f6', '#ef4444', '#10b981', '#8b5cf6', '#f59e0b']
+                                        data: tripTypeData.length ? tripTypeData : [1],
+                                        backgroundColor: tripTypeData.length
+                                            ? ['#c9982b', '#3b82f6', '#ef4444', '#10b981', '#8b5cf6', '#f59e0b']
+                                            : ['#e5e7eb']
                                     }]
                                 },
                                 options: {
                                     responsive: true,
                                     maintainAspectRatio: false,
                                     plugins: {
-                                        legend: {
-                                            position: 'bottom'
-                                        }
+                                        legend: { position: 'bottom' }
                                     }
                                 }
                             });
 
                             // Payment Mode Pie
+                            const payModeLabels = @json($paymentModes->keys());
+                            const payModeData = @json($paymentModes->values());
                             new Chart(document.getElementById('paymentModeChart'), {
                                 type: 'pie',
                                 data: {
-                                    labels: @json($paymentModes->keys()),
+                                    labels: payModeLabels.length ? payModeLabels : ['No Data'],
                                     datasets: [{
-                                        data: @json($paymentModes->values()),
-                                        backgroundColor: ['#c9982b', '#3b82f6', '#10b981', '#ef4444']
+                                        data: payModeData.length ? payModeData : [1],
+                                        backgroundColor: payModeData.length
+                                            ? ['#c9982b', '#3b82f6', '#10b981', '#ef4444']
+                                            : ['#e5e7eb']
                                     }]
                                 },
                                 options: {
                                     responsive: true,
                                     maintainAspectRatio: false,
                                     plugins: {
-                                        legend: {
-                                            position: 'bottom'
-                                        }
+                                        legend: { position: 'bottom' }
                                     }
                                 }
                             });

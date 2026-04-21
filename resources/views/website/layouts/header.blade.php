@@ -4,9 +4,8 @@
     <div class="px-7 lg:px-24 py-4 flex justify-between items-center">
 
         <!-- Logo -->
-        <a href="{{ url('/') }}" class="flex items-center overflow-hidden" style="height: 65px;">
-            <img src="{{ asset('assets/image/royel-seat-logo.png') }}" alt="Royal Seat Logo"
-                style="height: 65px; width: auto; margin-top: -26px; margin-bottom: -26px; object-fit: contain;">
+        <a href="{{ url('/') }}" class="flex items-center overflow-hidden" style="height: 70px;">
+            <img src="{{ asset('assets/image/logo-kipt.png') }}" alt="KIPT Logo" style="height: 80px; width: auto; margin-top: -29px; margin-bottom: -29px; object-fit: contain;">
         </a>
 
         <!-- Desktop Menu -->
